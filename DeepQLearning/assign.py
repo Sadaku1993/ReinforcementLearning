@@ -14,10 +14,5 @@ print(x.name, sess.run(x))
 print(y.name, sess.run(y))
 
 input_placeholder = tf.placeholder(tf.float32, shape=[5])
-
-# assign_op = x.assign(input_placeholder)
-
-# sess.run(assign_op, feed_dict={input_placeholder: np.ones(5).astype(np.float32)})
-
-assign_op = x.assign(y)
-print(sess.run(assign_op))
+assign_op = x.assign(input_placeholder)
+print(sess.run(assign_op, feed_dict={input_placeholder: np.ones(5).astype(np.float32)}))
